@@ -730,7 +730,9 @@
   }
 
   // ─── Boot ───
-  buildUI();
-  watchPage();
+  if (window.top === window.self) {
+    buildUI();
+    watchPage();
+  }
   console.log(PREFIX, 'userscript loaded');
 })();
